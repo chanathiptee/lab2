@@ -26,7 +26,7 @@ if upload_file is not None:
     
     img = img.resize((244,244))
     x = image.img_to_array(img)
-    x = np.extract(x, axis=0)
+    x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
     
     preds = model.preds(model)
