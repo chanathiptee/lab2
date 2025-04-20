@@ -29,7 +29,7 @@ if upload_file is not None:
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
     
-    preds = model.preds(model)
+    preds = model.preds(x)
     top_preds = decode_predictions(preds, top=3)[0]
     
     st.subheader("Prediction:")
