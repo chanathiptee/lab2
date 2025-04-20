@@ -7,7 +7,6 @@ Created on Sun Apr 20 13:52:15 2025
 """
 
 import streamlit as st
-import tensorflow 
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, decode_predictions, preprocess_input
 from tensorflow.keras.preprocessing import image
 import numpy as np
@@ -25,7 +24,7 @@ if upload_file is not None:
     img = Image.open(upload_file)
     st.image(img, caption="Upload Image")
     
-    img = img.resize(244,244)
+    img = img.resize((244,244))
     x = Image.img_to_array(img)
     x = np.extract(x, axis=0)
     x = preprocess_input(x)
