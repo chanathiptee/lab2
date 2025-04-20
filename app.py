@@ -33,5 +33,5 @@ if upload_file is not None:
     top_preds = decode_predictions(preds, top=3)[0]
     
     st.subheader("Prediction:")
-    for  i, pred in enumerate(top_preds):
-    st.write(f"{i+1}. **{pred[1]}** — {round(pred[2]*100, 2)}%")
+    for  i, preds in enumerate(top_preds):
+        st.write(f"{i+1}. **{pred[1]}** — {round(pred[2]*100, 2)}%")
